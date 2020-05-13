@@ -1,0 +1,280 @@
+"""
+
+This is the index of all possible items in the game world. Note that These
+
+key-value pairs are more like blueprints than actual items. The actual
+
+items exist in the GROUND value in an area's entry in the world variable.
+
+
+
+The GROUNDDESC value is a short string that displays in the area's description.
+
+The SHORTDESC value is a short string that will be used in sentences like, "You
+
+drop X." or "You buy X."
+
+The LONGDESC value is displayed when the player looks at the item.
+
+The TAKEABLE Boolean value is True if the player can pick up the item and put
+
+it in their inventory.
+
+The DESCWORDS value is a list of strings that can be used in the player's
+
+commands. For example, if this is ['welcome', 'sign'] then the player can type
+
+a command such as "take sign" or "look welcome".
+
+The TAKEABLE value is True if the item can be picked up off the ground. If
+
+this key doesn't exist, it defaults to True.
+
+The EDIBLE value is True if the item can be eaten. If this key doesn't exist,
+
+it defaults to False.
+
+"""
+
+worldItems = {
+
+    'Magical Specticals': {
+
+        GROUNDDESC: 'A pair of strange red glasses sit in front of you, surrounded by smoke and flame.  ',
+
+        SHORTDESC: 'the Magical Spacticles',
+
+        LONGDESC: 'The magical dark glasses eminate with a powerful and evil presence...',
+
+        TAKEABLE: True,
+
+        DESCWORDS: ['glasses', 'specticles', 'magic glasses', 'magic specticles']},
+    
+    'Well to Hell': {
+
+        GROUNDDESC: 'An otherworldly world portal. appeared in the feild.',
+
+        SHORTDESC: 'the well',
+
+        LONGDESC: 'The well is surounded by red light begging you to enter',
+
+        TAKEABLE: False,
+
+        DESCWORDS: ['well']},
+
+    'Sword': {
+
+        GROUNDDESC: 'A sword lies on the ground.',
+
+        SHORTDESC: 'a sword',
+
+        LONGDESC: 'A longsword, engraved with the word, "Exkaleber"',
+
+        DESCWORDS: ['sword', 'exkaleber', 'longsword']},
+
+    'War Axe': {
+
+        GROUNDDESC: 'A mighty war axe lies on the ground.',
+
+        SHORTDESC: 'a war axe',
+
+        LONGDESC: 'The mighty war axe is made with antimony impurities from a fallen star, rendering it surpassingly brittle.',
+
+        DESCWORDS: ['axe', 'war', 'mighty']},
+
+    'Chainmail T-Shirt': {
+
+        GROUNDDESC: 'A chainmail t-shirt lies wadded up on the ground.',
+
+        SHORTDESC: 'a chainmail t-shirt',
+
+        LONGDESC: 'The chainmail t-shirt has a slogan and arrow engraved on the front: "I\'m with Stupid"',
+
+        DESCWORDS: ['chainmail', 'chain', 'mail', 't-shirt', 'tshirt', 'stupid']},
+
+    'Anvil': {
+
+        GROUNDDESC: 'The blacksmith\'s anvil, far too heavy to pick up, rests in the corner.',
+
+        SHORTDESC: 'an anvil',
+
+        LONGDESC: 'The black anvil has the word "ACME" engraved on the side.',
+
+        TAKEABLE: False,
+
+        DESCWORDS: ['anvil']},
+
+    'Lock Picks': {
+
+        GROUNDDESC: 'A set of lock picks lies on the ground.',
+
+        SHORTDESC: 'a set of lock picks',
+
+        LONGDESC: 'A set of fine picks for picking locks.',
+
+        DESCWORDS: ['lockpicks', 'picks', 'set']},
+
+    'Silly Glasses': {
+
+        GROUNDDESC: 'A pair of those silly gag glasses with the nose and fake mustache rest on the ground.',
+
+        SHORTDESC: 'a pair of silly fake mustache glasses',
+
+        LONGDESC: 'These glasses have a fake nose and mustache attached to them. The perfect disguise!',
+
+        DESCWORDS: ['glasses', 'silly', 'fake', 'mustache']},
+
+    'Meat Pie': {
+
+        GROUNDDESC: 'A suspicious meat pie rests on the ground.',
+
+        SHORTDESC: 'a meat pie',
+
+        LONGDESC: 'A meat pie. It tastes like chicken.',
+
+        EDIBLE: True,
+
+        DESCWORDS: ['pie', 'meat']},
+
+    'Bagel': {
+
+        GROUNDDESC: 'A bagel rests on the ground. (Gross.)',
+
+        SHORTDESC: 'a bagel',
+
+        LONGDESC: 'It is a donut-shaped bagel.',
+
+        EDIBLE: True,
+
+        DESCWORDS: ['bagel']},
+
+    'Donut': {
+
+        GROUNDDESC: 'A donut rests on the ground. (Gross.)',
+
+        SHORTDESC: 'a donut',
+
+        LONGDESC: 'It is a bagel-shaped donut.',
+
+        EDIBLE: True,
+
+        DESCWORDS: ['donut']},
+
+    'Crystal Ball': {
+
+        GROUNDDESC: 'A glowing crystal ball rests on a small pillow.',
+
+        SHORTDESC: 'a crystal ball',
+
+        LONGDESC: 'The crystal ball swirls with mystical energy, forming the words "Answer Unclear. Check Again Later."',
+
+        DESCWORDS: ['crystal', 'ball']},
+
+    'Floating Book': {
+
+        GROUNDDESC: 'A magical book floats here.',
+
+        SHORTDESC: 'a floating book',
+
+        LONGDESC: 'This magical tomb doesn\'t have a lot of pictures in it. Boring!',
+
+        DESCWORDS: ['book', 'floating']},
+
+    'Telescope': {
+
+        GROUNDDESC: 'A telescope is bolted to the ground.',
+
+        SHORTDESC: 'a telescope',
+
+        LONGDESC: 'Using the telescope, you can see your house from here!',
+
+        TAKEABLE: False,
+
+        DESCWORDS: ['telescope']},
+
+    'README Note': {
+
+        GROUNDDESC: 'A note titled "README" rests on the ground.',
+
+        SHORTDESC: 'a README note',
+
+        LONGDESC: 'The README note reads, "Welcome to the text adventure demo. Be sure to check out the source code to see how this game is put together."',
+
+        EDIBLE: True,
+
+        DESCWORDS: ['readme', 'note']},
+
+    'Shop Howto': {
+
+        GROUNDDESC: 'A "Shopping HOWTO" note rests on the ground.',
+
+        SHORTDESC: 'a shopping howto',
+
+        LONGDESC: 'The note reads, "When you are at a shop, you can type "list" to show what is for sale. "buy <item>" will add it to your inventory, or you can sell an item in your inventory with "sell <item>". (Currently, money is not implemented in this program.)',
+
+        EDIBLE: True,
+
+        DESCWORDS: ['howto', 'note', 'shop']},
+
+    'Sacred Dagger': {
+
+        GROUNDDESC: 'A Sacred dagger rests in the chest.',
+
+        SHORTDESC: 'the Sacred Dagger',
+
+        LONGDESC: 'It looks like a dagger, but engraved with little carvings and letters depicting the pictures of the underworld. Its curved like the waves of the clouds, seems unbreakable, and is probably worth a lot',
+
+         TAKEABLE: True,
+
+        DESCWORDS: ['dagger', 'knife', 'sacred dagger']},
+
+    'Bow of Hell': {
+
+        GROUNDDESC: 'A Bow of Hell rests in the rubble.',
+
+        SHORTDESC: 'the Bow of Hell',
+
+        LONGDESC: 'A furious bow of flame and anger, ready to kill.',
+        
+        TAKEABLE: True,
+
+        DESCWORDS: ['dagger', 'knife', 'sacred dagger']},
+
+    'Magic Wand': {
+
+        GROUNDDESC: 'A magic wand is in front of you.',
+
+        SHORTDESC: 'a wand of... magic.',
+
+        LONGDESC: 'what looks like a metal rod, with a wood handle, eminating a strong and rustic magical energy',
+
+         TAKEABLE: True,
+
+        DESCWORDS: ['wand', 'rod', 'magic wand']},
+
+    'Health Potion': {
+
+        GROUNDDESC: 'A health potion rest in front of you.',
+
+        SHORTDESC: 'a potion of health.',
+
+        LONGDESC: 'a little bottle shaped like a heart and holding a white strange liquid inside.',
+
+         TAKEABLE: True,
+
+        DESCWORDS: ['health potion', 'potion']},
+    }
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+"""
